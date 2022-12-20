@@ -1,0 +1,106 @@
+
+.BarsBar,
+.menuItems,
+.closeBar,
+.bars
+{
+    display: none;
+}
+
+
+
+.logins{
+    color: red !important;
+}
+
+
+
+@media screen and (min-width: 1px) and (max-width: 750px) {
+    .BarsBar,
+    .menuItems,
+    .closeBar,
+    .bars,
+    .logo .logo2{
+        display: block;
+    }
+    .menuItem{
+        
+        display: none !important;
+       
+    }
+    .menuItems{
+        position: absolute;
+        display: block !important;
+        top: 108px !important;
+        right: -1px;
+        background-color: rgb(230, 235, 235);
+        width: 100%;
+        text-align: center;
+        z-index: 1000;
+    }
+    .menuItems li{
+        margin: 0px 5px !important;
+       
+    }
+     
+}
+@media screen and (min-width: 751px) {
+    .logo .logo1{
+        display: block;
+    }
+    .menuItems{
+        display: flex !important;
+        z-index: 1000;
+       
+    }
+    .menuItem{
+        display: flex !important;
+    }
+    .menuItem{
+        display: flex;  
+    }
+    .menuItem li{
+        margin: 0 5px !important;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: capitalize;
+        transition: .2s;
+        -webkit-transition: .2s;
+        -moz-transition: .2s;
+        -ms-transition: .2s;
+        -o-transition: .2s;
+}
+    .menuItems li{
+        margin: 0px 5px !important;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: capitalize;
+        transition: .2s;
+    }
+   
+}
+
+.logout a,
+.register a,
+.login a{
+    padding: 8px 10px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.menuItem li:hover,
+.menuItems li:hover{
+   background-color: black;
+   color: white;
+   padding: 8px 10px;
+   border-radius: 5px;
+}
+
+
