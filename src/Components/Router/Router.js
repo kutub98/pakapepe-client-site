@@ -15,6 +15,7 @@ import Register from '../Pages/Register/Register';
 const Router = () => {
     const router = createBrowserRouter([
         {path: '/', element: <MainHome></MainHome>, children:[
+            {path: '/', element: <Home></Home>},
             {path: 'home', element: <Home></Home>},
             {path: 'vegetables', element: <Vegetables></Vegetables>},
             {path: 'shop', element: <Shop></Shop>},
