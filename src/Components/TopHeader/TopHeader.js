@@ -4,6 +4,7 @@ import logo from "../../Assets/logo/logo.png";
 import { FaBars, FaWindowClose, RiBarChartHorizontalLine } from "react-icons/fa";
 import "./TopHeader.css";
 import { authContest } from "../Context/UseContext";
+
 const TopHeader = () => {
   const [openMenu, setOpenMenu] = useState(true);
   const {user, LogOut, logout} = useContext(authContest)
@@ -44,6 +45,11 @@ const TopHeader = () => {
       <li className="" onClick={() => setOpenMenu(!openMenu)}>
         <Link className=" text-lg " to="/contact">
           Contact
+        </Link>
+      </li>
+      <li className="" onClick={() => setOpenMenu(!openMenu)}>
+        <Link className=" text-lg " to="/location">
+          Location
         </Link>
       </li>
       

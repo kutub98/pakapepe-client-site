@@ -1,22 +1,21 @@
-
 import React, { useContext, useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-
+import L, { circle } from "leaflet";
 
 import icon from "../../exactlocation";
 import { authContest } from "../Context/UseContext";
 
-const center = [22.33889711731967, 91.79081445207339]
+const center = [22.33889711731967, 91.79081445207339];
 const Home = () => {
-    const {user} = useContext(authContest)
-    console.log(user)
+  const { user } = useContext(authContest);
+
   function LocationMarker() {
     const [position, setPosition] = useState(null);
     const [bbox, setBbox] = useState([]);
 
     const map = useMap();
+    
 
     useEffect(() => {
       map.locate().on("locationfound", function (e) {
@@ -26,11 +25,15 @@ const Home = () => {
         const circle = L.circle(e.latlng, radius);
         circle.addTo(map);
         setBbox(e.bounds.toBBoxString().split(","));
+        console.log( e.bounds)
       });
     }, [map]);
 
+   
     return position === null ? null : (
+     
       <Marker position={position} icon={icon}>
+         
         <Popup>
           You are here. <br />
           Map bbox: <br />
@@ -44,12 +47,7 @@ const Home = () => {
   }
 
   return (
-    <MapContainer
-      center={[49.1951, 16.6068]}
-      zoom={13}
-      scrollWheelZoom
-      style={{ height: "100vh" }}
-    >
+    <MapContainer center={[49.1951, 16.6068]} zoom={13} scrollWheelZoom style={{ height: "100vh" }}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
